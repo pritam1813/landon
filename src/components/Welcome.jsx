@@ -1,26 +1,14 @@
 import React from "react";
+import galleryImagesData from "./data/gallery_images.json";
 
-export default function Welcome() {
+function Welcome() {
   return (
     <div className="scene" id="welcome">
       <article className="content">
         <div className="gallery">
-          <img
-            src="https://landonhotel.com/images/hotel/intro_room.jpg"
-            alt="Intro Gallery Room Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_pool.jpg"
-            alt="Intro Gallery Pool Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_dining.jpg"
-            alt="Intro Gallery Dining Sample Pictures"
-          />
-          <img
-            src="https://landonhotel.com/images/hotel/intro_attractions.jpg"
-            alt="Intro Gallery Attractions Sample Pictures"
-          />
+          {galleryImagesData.map((images) => (
+            <img key={images._id} src={images.src} alt={images.alt} />
+          ))}
           <img
             className="hidesm"
             src="https://landonhotel.com/images/hotel/intro_wedding.jpg"
@@ -44,3 +32,5 @@ export default function Welcome() {
     </div>
   );
 }
+
+export default Welcome;

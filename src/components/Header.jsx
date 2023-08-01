@@ -28,7 +28,7 @@ const Header = () => {
           </div>
           <ul>
             {menuLinksData.map((menulink) => (
-              <li>
+              <li key={menulink._id}>
                 <a className={`icon ${menulink.class}`} href={menulink.href}>
                   <span>{menulink.text}</span>
                 </a>
