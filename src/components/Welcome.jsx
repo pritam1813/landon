@@ -7,13 +7,13 @@ function Welcome() {
       <article className="content">
         <div className="gallery">
           {galleryImagesData.map((images) => (
-            <img key={images._id} src={images.src} alt={images.alt} />
+            <img
+              key={images._id}
+              className={images.className}
+              src={images.src}
+              alt={images.alt}
+            />
           ))}
-          <img
-            className="hidesm"
-            src="https://landonhotel.com/images/hotel/intro_wedding.jpg"
-            alt="Intro Gallery Dining Sample Pictures"
-          />
         </div>
         <h1>Welcome to the Landon&nbsp;Hotel</h1>
         <p>
