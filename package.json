@@ -8,10 +8,12 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "table": "node src/scripts"
+    "table": "node src/scripts",
+    "loaddata": "node src/scripts/loadData"
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.382.0",
+    "@aws-sdk/lib-dynamodb": "^3.382.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

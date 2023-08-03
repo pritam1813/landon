@@ -3,7 +3,7 @@ const region = "us-east-1";
 const dynamodb = new DynamoDB({ region });
 
 const params = {
-  TableName: "Accessibility",
+  TableName: "Accessibilities",
   KeySchema: [
     // Partition Key
     { AttributeName: "name", KeyType: "HASH" },
