@@ -1,14 +1,22 @@
-import React from "react";
-import galleryImagesData from "./data/gallery_images.json";
+import React, { useEffect, useState } from "react";
+import { loadDataFromEndpoint } from "../helpers/utils";
+// import galleryImagesData from "./data/gallery_images.json";
 
 function Welcome() {
+  const [galleryImagesData, setGalleryImagesData] = useState([]);
+
+  useEffect(() => {
+    //Loads the menu Links data from the AWS API Gateway
+    loadDataFromEndpoint("gallery_images", setGalleryImagesData);
+  }, []);
+
   return (
     <div className="scene" id="welcome">
       <article className="content">
         <div className="gallery">
           {galleryImagesData.map((images) => (
             <img
-              key={images._id}
+              key={images.src}
               className={images.className}
               src={images.src}
               alt={images.alt}

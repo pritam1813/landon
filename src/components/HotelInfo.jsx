@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { loadDataFromEndpoint } from "../helpers/utils";
 
-export default function HotelInfo() {
+const HotelInfo = () => {
+  const [servicesData, setServicesData] = useState([]);
+  const [accessibilitiesData, setAccessibilitiesData] = useState([]);
+
+  useEffect(() => {
+    //Loads the Services and Accessibilities data from the AWS API Gateway
+    loadDataFromEndpoint("services", setServicesData);
+    loadDataFromEndpoint("accessibilities", setAccessibilitiesData);
+  }, []);
+
   return (
     <div className="scene" id="hotelinfo">
       <article className="heading">
@@ -43,21 +53,9 @@ export default function HotelInfo() {
             your stay comfortable, and your experience one-of-a-kind.
           </p>
           <ul>
-            <li>Indoor pool</li>
-            <li>24-hour fitness center</li>
-            <li>Massage therapy</li>
-            <li>Full service spa</li>
-            <li>In-room jacuzzi tubs</li>
-            <li>Rooftop café &amp; smoothie bar</li>
-            <li>Coffee bar &amp; pastry shop</li>
-            <li>Traditional continental breakfast</li>
-            <li>24-hour concierge service</li>
-            <li>Business center</li>
-            <li>Complimentary wireless service</li>
-            <li>Laundry &amp; dry cleaning service</li>
-            <li>Daily paper</li>
-            <li>Certified "green" hotel</li>
-            <li>Pet-friendly rooms &amp; common areas</li>
+            {servicesData.map((service) => (
+              <li key={service.name}>{service.name}</li>
+            ))}
           </ul>
         </section>
         <section className="checklist" id="accessibility">
@@ -68,19 +66,9 @@ export default function HotelInfo() {
             needs:
           </p>
           <ul>
-            <li>Grab bars on tub walls</li>
-            <li>Shower chairs</li>
-            <li>Hand held shower sprayers</li>
-            <li>Higher toilets &amp; toilet modifiers</li>
-            <li>Lower sink faucet handles</li>
-            <li>Wheelchair clearance under sinks &amp; vanity</li>
-            <li>Lower racks in closet</li>
-            <li>TDD machines</li>
-            <li>Telephone light signalers &amp; smoke alarms</li>
-            <li>Telephone amplification handsets</li>
-            <li>Closed captioned television converters</li>
-            <li>Vibrating alarm clocks</li>
-            <li>Telephones with volume control</li>
+            {accessibilitiesData.map((accessibility) => (
+              <li key={accessibility.name}>{accessibility.name}</li>
+            ))}
           </ul>
         </section>
       </article>
@@ -99,4 +87,6 @@ export default function HotelInfo() {
       </article>
     </div>
   );
-}
+};
+
+export default HotelInfo;

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { loadDataFromEndpoint } from "../helpers/utils";
 // import menuLinksData from "./data/menu_links.json";
 
 const Header = () => {
   const [menuLinksData, setMenuLinksData] = useState([]);
 
+  /*
   const loadMenuLinksData = async () => {
     // Query the API Gateway
     const base_url = import.meta.env.VITE_BASE_URL;
@@ -13,10 +15,12 @@ const Header = () => {
     let data = await response.json();
     setMenuLinksData(data);
   };
+  */
 
   useEffect(() => {
-    //Loads the menu Links data from the AWS API Gateway
-    loadMenuLinksData();
+    // Loads the menu Links data from the AWS API Gateway
+    // loadMenuLinksData();
+    loadDataFromEndpoint("menu_links", setMenuLinksData);
   }, []);
 
   return (
