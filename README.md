@@ -9,6 +9,8 @@
 
 This web app is a very basic clone of the original website of [Landon Hotel](https://landonhotel.com/). It is build using React and AWS Amplify. It also demonstrate a basic example of **Serverless** React Web App.
 
+**[Live URL](https://landon.pclyst.com/)**
+
 ## Technology Used
 
 - React js
