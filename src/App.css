@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,200,600,800&display=swap);
+
 /* line 5, ../../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.0.rc.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -143,7 +144,7 @@ body {
 
 /* line 2, ../../../components/sass/modules/_intro.scss */
 header .fullheight {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://landonhotel.com/images/hotel/splash_hotelphoto.jpg");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://res.cloudinary.com/dilccvk58/image/upload/v1691175605/landon/splash_hotelphoto.webp");
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -239,7 +240,7 @@ header #nav .navbar .brand {
   font-family: 200 1.5em/1.5em "Exo 2", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   text-transform: uppercase;
-  background: #DF4848;
+  background: #e71111;
 }
 /* line 17, ../../../components/sass/modules/_nav.scss */
 header #nav .navbar .brand a {

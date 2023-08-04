@@ -23,12 +23,14 @@ try {
     if (className.trim() == "") {
       className = "no_class";
     }
+    const public_id = GalleryImage.src.split("/").pop().split(".")[0];
     const params = {
       TableName: "GalleryImages",
       Item: {
         src: GalleryImage.src,
         alt: GalleryImage.alt,
         className,
+        public_id,
       },
     };
 

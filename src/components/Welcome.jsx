@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { loadDataFromEndpoint } from "../helpers/utils";
+import { AdvancedImage } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
+// Use this to run the app locally
 // import galleryImagesData from "./data/gallery_images.json";
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: import.meta.env.VITE_CLOUD_NAME,
+  },
+});
 
 function Welcome() {
   const [galleryImagesData, setGalleryImagesData] = useState([]);
@@ -15,10 +24,19 @@ function Welcome() {
       <article className="content">
         <div className="gallery">
           {galleryImagesData.map((images) => (
+            /*
+            //Can be used without the need of cloudinary
             <img
               key={images.src}
               className={images.className}
               src={images.src}
+              alt={images.alt}
+            />
+            */
+            <AdvancedImage
+              key={images.public_id}
+              cldImg={cld.image(`landon/${images.public_id}`)}
+              className={images.className}
               alt={images.alt}
             />
           ))}

@@ -12,6 +12,8 @@ function Footer() {
                   className="icon"
                   src="https://landonhotel.com/images/socialmedia/twitter.png"
                   alt="icon for twitter"
+                  width="100%"
+                  height="100%"
                 />
               </a>
             </li>
@@ -21,6 +23,8 @@ function Footer() {
                   className="icon"
                   src="https://landonhotel.com/images/socialmedia/facebook.png"
                   alt="icon for facebook"
+                  width="100%"
+                  height="100%"
                 />
               </a>
             </li>
@@ -30,6 +34,8 @@ function Footer() {
                   className="icon"
                   src="https://landonhotel.com/images/socialmedia/youtube.png"
                   alt="icon for youtube"
+                  width="100%"
+                  height="100%"
                 />
               </a>
             </li>

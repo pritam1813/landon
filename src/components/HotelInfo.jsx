@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { loadDataFromEndpoint } from "../helpers/utils";
+// Use these to run the app locally
+// import servicesData from './data/services.json';
+// import accessibilitiesData from './data/accessibilities.json';
 
 const HotelInfo = () => {
   const [servicesData, setServicesData] = useState([]);

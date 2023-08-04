@@ -14,6 +14,7 @@ const params = {
     { AttributeName: "src", AttributeType: "S" },
     { AttributeName: "alt", AttributeType: "S" },
     { AttributeName: "className", AttributeType: "S" },
+    { AttributeName: "public_id", AttributeType: "S" },
   ],
   LocalSecondaryIndexes: [
     {
@@ -21,6 +22,16 @@ const params = {
       KeySchema: [
         { AttributeName: "src", KeyType: "HASH" },
         { AttributeName: "alt", KeyType: "RANGE" },
+      ],
+      Projection: {
+        ProjectionType: "KEYS_ONLY",
+      },
+    },
+    {
+      IndexName: "PublicIdIndex",
+      KeySchema: [
+        { AttributeName: "src", KeyType: "HASH" },
+        { AttributeName: "public_id", KeyType: "RANGE" },
       ],
       Projection: {
         ProjectionType: "KEYS_ONLY",

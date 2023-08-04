@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { loadDataFromEndpoint } from "../helpers/utils";
+// Use this to run the app locally
 // import menuLinksData from "./data/menu_links.json";
 
 const Header = () => {
@@ -34,6 +35,8 @@ const Header = () => {
               <img
                 src="https://landonhotel.com/images/misc/arrow.png"
                 alt="down arrow"
+                width="100%"
+                height="100%"
               />
             </a>
           </p>
@@ -50,7 +53,11 @@ const Header = () => {
           <ul>
             {menuLinksData.map((menulink) => (
               <li key={menulink.href}>
-                <a className={`icon ${menulink.class}`} href={menulink.href}>
+                <a
+                  className={`icon ${menulink.class}`}
+                  href={menulink.href}
+                  aria-label={`Link for ${menulink.text}`}
+                >
                   <span>{menulink.text}</span>
                 </a>
               </li>
